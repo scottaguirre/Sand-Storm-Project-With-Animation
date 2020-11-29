@@ -1,0 +1,24 @@
+$base-size: 14px;
+
+// Colors
+$green: #2ece76;
+$blue: #2cbdc0;
+$dark-blue: #2d314e;
+$gray: #95959d;
+$dark-gray: #31334a;
+$light-gray-1: #f4f5f7;
+$light-gray-2: #fafafa;
+$white: #ffffff;
+
+// Misc
+$font-family: "Libre Franklin", sans-serif;
+$transition-base-ease: cubic-bezier(0.16, 1.08, 0.38, 0.98);
+$transition-base-duration: 600ms;
+
+// Breakpoints
+
+$xx-large-screen-size: 1400px;
+$x-large-screen-size: 1200px;
+$large-screen-size: 992px;
+$medium-screen-size: 768px;
+$small-screen-size: 576px;

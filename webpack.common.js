@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const glob = require("glob");
 
@@ -23,6 +24,12 @@ module.exports = {
         postcss: [autoprefixer()],
       },
     }),
+    // This plugin will generate the html file for the index.pug file in the dist folder
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/views/index.pug',
+      minify: false
+  })
   ],
   module: {
     rules: [
@@ -35,12 +42,17 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader, // extract css and output it in a separate file but not minified
           "css-loader" /*convert css into js */,
           "postcss-loader",
           "sass-loader",
         ],
       },
+       // Pug loader
+       {
+        test: /\.pug$/,
+        use: ['html-loader', 'pug-html-loader'],
+    }
     ],
   },
 };

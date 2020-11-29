@@ -1,0 +1,36 @@
+// All of these mixins will be used for breakpoints & media queries
+@mixin responsive($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin xxl-screen {
+  @include responsive($xx-large-screen-size) {
+    @content;
+  }
+}
+
+@mixin xl-screen {
+  @include responsive($x-large-screen-size) {
+    @content;
+  }
+}
+
+@mixin l-screen {
+  @include responsive($large-screen-size) {
+    @content;
+  }
+}
+
+@mixin m-screen {
+  @include responsive($medium-screen-size) {
+    @content;
+  }
+}
+
+@mixin s-screen {
+  @include responsive($small-screen-size) {
+    @content;
+  }
+}
